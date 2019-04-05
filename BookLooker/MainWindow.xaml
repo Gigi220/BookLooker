@@ -1,0 +1,110 @@
+﻿<Window x:Class="BookLooker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookLooker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000">
+    <Grid>
+		<Grid ShowGridLines="True">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="320"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid x:Name="AllInfoGrid" Grid.Column="0">
+				<Grid ShowGridLines="False">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="220"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<Grid Grid.Column="1">
+						<Grid x:Name="TextInfoGrid" Grid.Row="0" ShowGridLines="False">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="10"/>
+								<ColumnDefinition/>
+								<ColumnDefinition Width="10"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="10"/>
+								<RowDefinition Height="40"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition/>
+								<RowDefinition Height="10"/>
+							</Grid.RowDefinitions>
+							<Label x:Name="BookNameLabel" Grid.Column="1" Grid.Row="1" Foreground="#766e3f" FontWeight="Light" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" FontSize="22">Book Name Background="#d8dae6"</Label>
+							<Label x:Name="BookAutherLabel" Grid.Column="1" Grid.Row="2" FontWeight="Light" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" FontSize="18">Book Auther Background="#eeeeec"</Label>
+
+							<ScrollViewer Grid.Column="1" Grid.Row="3">
+								<TextBlock x:Name="BookShortInfoLabel" Foreground="#72747a" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,25,0,0" Padding="5,5,5,5" Background="#d8dae6" FontWeight="Light" FontFamily="Comic Sans MS" FontSize="15">Book Auther Background="#eeeeec"</TextBlock>
+							</ScrollViewer>
+						</Grid>
+					</Grid>
+
+					<Grid x:Name="ImgInfoGrid" Grid.Column="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="5"/>
+							<ColumnDefinition/>
+							<ColumnDefinition Width="5"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="5"/>
+							<RowDefinition/>
+							<RowDefinition Height="5"/>
+						</Grid.RowDefinitions>
+
+						<Grid Grid.Column="1" Grid.Row="1">
+							<Button Template="{DynamicResource ResourceKey=ImageButton}" VerticalContentAlignment="Top" Click="ImageButton_Click" BorderThickness="0" Background="#e9e9e9">
+								<Image Margin="0,50,0,0" x:Name="ImageInfo" Width="200"></Image>
+							</Button>
+						</Grid>
+					</Grid>
+				</Grid>
+			</Grid>
+
+			<Grid Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="40"/>
+				</Grid.RowDefinitions>
+				<Grid Grid.Row="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="5"/>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="5"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="5"/>
+						<RowDefinition/>
+						<RowDefinition Height="5"/>
+					</Grid.RowDefinitions>
+
+					<ListView x:Name="BooksListView" Padding="0,0,0,0" Grid.Column="1" Grid.Row="1">
+						
+					</ListView>
+				</Grid>
+
+				<Grid Grid.Row="1" Margin="5,5,5,5">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="50"/>
+					</Grid.ColumnDefinitions>
+
+					<Button Grid.Column="0" Click="FindButton_Click" Margin="0,0,0,0">
+						<Image x:Name="FindImg" Source="Img\find.png"></Image>
+					</Button>
+					
+					<Button Grid.Column="2" Click="ReloadButton_Click">
+						<Image x:Name="ReloadImg" Source="Img\reload.jpg"></Image>
+					</Button>
+					
+					
+				</Grid>
+			</Grid>
+			
+		</Grid>
+    </Grid>
+</Window>
